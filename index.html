@@ -12,18 +12,31 @@
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 20px; }
         .logo { font-size: 24px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: #000; }
         nav a { margin-left: 25px; font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: #555; }
-        .hero { background: #111111; height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #ffffff; padding: 20px; }
-        .hero h2 { font-size: 48px; font-weight: 700; text-transform: uppercase; letter-spacing: 6px; margin-bottom: 15px; }
-        .hero p { font-size: 18px; font-weight: 300; letter-spacing: 2px; margin-bottom: 30px; }
-        .btn { background: #fff; color: #000; padding: 12px 35px; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; }
+        
+        /* BLACK BANNER WITH DIRECT HTML LOGO */
+        .hero { background: #111111; height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #ffffff; padding: 20px; }
+        .hero h2 { font-size: 42px; font-weight: 700; text-transform: uppercase; letter-spacing: 6px; margin-bottom: 15px; }
+        
+        /* SLOGAN STYLING */
+        .main-slogan { font-size: 16px; font-weight: 300; letter-spacing: 2px; margin-bottom: 10px; }
+        
+        /* BLINK/FADE ANIMATION FOR SECOND SLOGAN */
+        .animated-slogan { font-size: 14px; font-weight: 400; letter-spacing: 3px; color: #25D366; /* ગ્રીન હાઇલાઇટ લુક */ margin-top: 5px; min-height: 20px; transition: opacity 0.8s ease-in-out; opacity: 0; }
+        
         .section-title { text-align: center; margin: 60px 0 30px 0; font-size: 28px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; }
         .products-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; padding: 0 20px 80px 20px; }
-        .product-card { background: #fff; border: 1px solid #f0f0f0; border-radius: 4px; overflow: hidden; text-align: center; }
+        .product-card { background: #fff; border: 1px solid #f0f0f0; border-radius: 4px; overflow: hidden; text-align: center; padding-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
         .product-img { width: 100%; height: 380px; object-fit: cover; background-color: #eaeaea; }
-        .product-info { padding: 20px; }
+        .product-info { padding: 20px 20px 10px 20px; }
         .product-brand { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
         .product-name { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
         .product-price { font-size: 15px; font-weight: 500; color: #111; margin-bottom: 15px; }
+        
+        /* PERFECT GREEN WHATSAPP BUTTON WITH SVG ICON */
+        .whatsapp-btn { background-color: #25D366; color: white; padding: 12px 20px; font-size: 13px; font-weight: 600; text-transform: uppercase; text-decoration: none; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: background 0.3s; width: 85%; margin: 10px auto 0 auto; }
+        .whatsapp-btn:hover { background-color: #128C7E; color: white; }
+        .whatsapp-icon { width: 18px; height: 18px; fill: #ffffff; }
+        
         footer { background: #111; color: #fff; text-align: center; padding: 40px 20px; font-size: 13px; letter-spacing: 1px; }
     </style>
 </head>
@@ -34,44 +47,67 @@
             <nav><a href="#">Home</a><a href="#collection">Collection</a></nav>
         </div>
     </header>
-<section class="hero">
-    <!-- DIRECT HTML PHOENIX BIRD LOGO -->
-    <svg xmlns="http://w3.org" viewBox="0 0 24 24" style="width: 100px; height: 100px; fill: #ffffff; margin-bottom: 20px;">
-        <path d="M12 2s.5 2.5 1.5 4.5S15.5 10 17 11c-1.5-.5-3-1.5-4-3.5C12 9.5 11 11 9.5 12c1.5 0 2.5-1.5 3-3.5C11.5 9 10 8 9.5 6.5 10 8.5 11 10 12 11c-.5-1.5-1-3.5 0-9zm0 4c1.5 2 3.5 3.5 6 4-2.5-.5-4.5-2-5.5-4zm-6 5c2.5-.5 4.5-2 5.5-4-1.5 2-3.5 3.5-6 4zm6 2c-3.31 0-6 2.69-6 6h12c0-3.31-2.69-6-6-6z"/>
-    </svg>
-
-    <h2>Phoenix Fashion Wear</h2>
-    <p>Rise in Style. Redefine Your Wardrobe.</p>
-</section>
+    
+    <section class="hero">
+        <!-- DIRECT HTML PHOENIX BIRD LOGO -->
+        <svg xmlns="http://w3.org" viewBox="0 0 24 24" style="width: 100px; height: 100px; fill: #ffffff; margin-bottom: 20px;">
+            <path d="M12 2s.5 2.5 1.5 4.5S15.5 10 17 11c-1.5-.5-3-1.5-4-3.5C12 9.5 11 11 9.5 12c1.5 0 2.5-1.5 3-3.5C11.5 9 10 8 9.5 6.5 10 8.5 11 10 12 11c-.5-1.5-1-3.5 0-9zm0 4c1.5 2 3.5 3.5 6 4-2.5-.5-4.5-2-5.5-4zm-6 5c2.5-.5 4.5-2 5.5-4-1.5 2-3.5 3.5-6 4zm6 2c-3.31 0-6 2.69-6 6h12c0-3.31-2.69-6-6-6z"/>
+        </svg>
+        <h2>Phoenix Fashion Wear</h2>
+        
+        <!-- આ વાક્ય પરમેનન્ટ રહેશે -->
+        <p class="main-slogan">Rise in Style. Redefine Your Wardrobe.</p>
+        
+        <!-- આ નવું વાક્ય નીચે બ્લિંક થઈને આવશે -->
+        <p id="blinkSlogan" class="animated-slogan">Uniquely Crafted, Just For You.</p>
+    </section>
 
     <section id="collection">
         <h3 class="section-title">New Arrivals</h3>
         <div class="products-grid">
+            
+            <!-- Item 1 -->
             <div class="product-card">
-                <img class="product-img" src="https://unsplash.com" alt="SHIRT">
+                <img class="product-img" src="https://unsplash.com" alt="Premium Jacket">
                 <div class="product-info">
                     <div class="product-brand">Phoenix Outerwear</div>
-                    <div class="product-name">Classic Tailored Trench</div>
-                 <div class="product-price">₹699.00</div>
-                 <!-- WhatsApp Button With Icon -->
-<a href="https://wa.me! I want to order this item." target="_blank" style="background-color: #25D366; color: white; padding: 10px 18px; font-size: 13px; font-weight: 600; text-transform: uppercase; text-decoration: none; border-radius: 4px; display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
-    <!-- Green WhatsApp Icon -->
-    <svg xmlns="http://w3.org" viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: #ffffff;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.321 5.325 0 11.834 0 15.11 0 18.167 1.257 20.428 3.533c2.26 2.274 3.44 5.301 3.44 8.517 0 6.512-5.322 11.833-11.83 11.833-1.991-.001-3.953-.5-5.688-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.424 9.863-9.858.002-2.634-1.03-5.107-2.905-6.98C16.499 1.86 14.04 1.83 11.84 1.83c-5.437 0-9.86 4.425-9.864 9.86-.001 1.702.461 3.366 1.336 4.815L2.24 21.8l5.522-1.446z"/></svg>
-    Order on WhatsApp
-</a>
-   
+                    <div class="product-name">Classic Black Leather Jacket</div>
+                    <div class="product-price">₹2,499.00</div>
                 </div>
+                <a href="https://wa.me" target="_blank" class="whatsapp-btn">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.321 5.325 0 11.834 0 15.11 0 18.167 1.257 20.428 3.533c2.26 2.274 3.44 5.301 3.44 8.517 0 6.512-5.322 11.833-11.83 11.833-1.991-.001-3.953-.5-5.688-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.424 9.863-9.858.002-2.634-1.03-5.107-2.905-6.98C16.499 1.86 14.04 1.83 11.84 1.83c-5.437 0-9.86 4.425-9.864 9.86-.001 1.702.461 3.366 1.336 4.815L2.24 21.8l5.522-1.446z"/></svg>
+                    Order on WhatsApp
+                </a>
             </div>
+
+            <!-- Item 2 -->
             <div class="product-card">
-                <img class="product-img" src="https://unsplash.com" alt="T-SHIRTS">
+                <img class="product-img" src="https://unsplash.com" alt="Dress">
                 <div class="product-info">
                     <div class="product-brand">Phoenix Essentials</div>
-                    <div class="product-name">HALF OVERSIZED T SHIRTS</div>
-                  <div class="product-price">₹499.00</div>
+                    <div class="product-name">Minimalist Knit Dress</div>
+                    <div class="product-price">₹1,899.00</div>
                 </div>
+                <a href="https://wa.me" target="_blank" class="whatsapp-btn">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.321 5.325 0 11.834 0 15.11 0 18.167 1.257 20.428 3.533c2.26 2.274 3.44 5.301 3.44 8.517 0 6.512-5.322 11.833-11.83 11.833-1.991-.001-3.953-.5-5.688-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.424 9.863-9.858.002-2.634-1.03-5.107-2.905-6.98C16.499 1.86 14.04 1.83 11.84 1.83c-5.437 0-9.86 4.425-9.864 9.86-.001 1.702.461 3.366 1.336 4.815L2.24 21.8l5.522-1.446z"/></svg>
+                    Order on WhatsApp
+                </a>
             </div>
+
         </div>
     </section>
+    
     <footer><p>&copy; 2026 Phoenix Fashion Wear. All Rights Reserved.</p></footer>
+
+    <!-- જાદુઈ સ્ક્રિપ્ટ: ૨ સેકન્ડ પછી બીજું વાક્ય સ્મૂધલી લાવશે -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const blinkEl = document.getElementById('blinkSlogan');
+            setTimeout(() => {
+                // ૨ સેકન્ડ પછી નવું વાક્ય ઓટોમેટિક દેખાશે (Fade-in થશે)
+                blinkEl.style.opacity = 1;
+            }, 2000); // ૨ સેકન્ડનો વેઇટિંગ ટાઈમ
+        });
+    </script>
 </body>
 </html>
