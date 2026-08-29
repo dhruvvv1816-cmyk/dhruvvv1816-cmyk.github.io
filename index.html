@@ -28,8 +28,8 @@
         .product-name { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
         .product-price { font-size: 15px; font-weight: 500; color: #111; margin-bottom: 15px; }
         
-        /* WHATSAPP BUTTON WITH NUMBER DISPLAY */
-        .whatsapp-btn { background-color: #25D366; color: white; padding: 12px 20px; font-size: 13px; font-weight: 600; text-transform: uppercase; text-decoration: none; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: background 0.3s; width: 85%; margin: 10px auto 5px auto; }
+        /* WHATSAPP SMART BUTTON */
+        .whatsapp-btn { background-color: #25D366; color: white; padding: 12px 20px; font-size: 13px; font-weight: 600; text-transform: uppercase; border: none; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: background 0.3s; width: 85%; margin: 10px auto 5px auto; cursor: pointer; }
         .whatsapp-btn:hover { background-color: #128C7E; color: white; }
         .whatsapp-icon { width: 18px; height: 18px; fill: #ffffff; }
         .phone-display { font-size: 12px; color: #666; font-weight: 500; margin-top: 4px; }
@@ -66,10 +66,11 @@
                     <div class="product-name">Classic Black Leather Jacket</div>
                     <div class="product-price">₹2,499.00</div>
                 </div>
-                <a href="https://wa.me" target="_blank" class="whatsapp-btn">
+                <!-- સ્માર્ટ બટન જે ડાયરેક્ટ એપ ખોલવાનો ટ્રાય કરશે -->
+                <button onclick="openWhatsApp('Classic Black Leather Jacket')" class="whatsapp-btn">
                     <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.321 5.325 0 11.834 0 15.11 0 18.167 1.257 20.428 3.533c2.26 2.274 3.44 5.301 3.44 8.517 0 6.512-5.322 11.833-11.83 11.833-1.991-.001-3.953-.5-5.688-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.424 9.863-9.858.002-2.634-1.03-5.107-2.905-6.98C16.499 1.86 14.04 1.83 11.84 1.83c-5.437 0-9.86 4.425-9.864 9.86-.001 1.702.461 3.366 1.336 4.815L2.24 21.8l5.522-1.446z"/></svg>
                     Order on WhatsApp
-                </a>
+                </button>
                 <div class="phone-display">Or Call: +91 63514 59342</div>
             </div>
 
@@ -81,10 +82,11 @@
                     <div class="product-name">Minimalist Knit Dress</div>
                     <div class="product-price">₹1,899.00</div>
                 </div>
-                <a href="https://wa.me" target="_blank" class="whatsapp-btn">
+                <!-- સ્માર્ટ બટન જે ડાયરેક્ટ એપ ખોલવાનો ટ્રાય કરશે -->
+                <button onclick="openWhatsApp('Minimalist Knit Dress')" class="whatsapp-btn">
                     <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.321 5.325 0 11.834 0 15.11 0 18.167 1.257 20.428 3.533c2.26 2.274 3.44 5.301 3.44 8.517 0 6.512-5.322 11.833-11.83 11.833-1.991-.001-3.953-.5-5.688-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.424 9.863-9.858.002-2.634-1.03-5.107-2.905-6.98C16.499 1.86 14.04 1.83 11.84 1.83c-5.437 0-9.86 4.425-9.864 9.86-.001 1.702.461 3.366 1.336 4.815L2.24 21.8l5.522-1.446z"/></svg>
                     Order on WhatsApp
-                </a>
+                </button>
                 <div class="phone-display">Or Call: +91 63514 59342</div>
             </div>
 
@@ -93,14 +95,29 @@
     
     <footer><p>&copy; 2026 Phoenix Fashion Wear. All Rights Reserved.</p></footer>
 
+    <!-- સુપર પાવરફુલ જાવાસ્ક્રિપ્ટ જે એરર વગર વ્હોટ્સએપ ઓપન કરાવશે -->
     <script>
+        // સ્લોગન એનિમેશન
         window.addEventListener('DOMContentLoaded', () => {
             const blinkEl = document.getElementById('blinkSlogan');
             setTimeout(() => {
                 blinkEl.style.opacity = 1;
             }, 2000);
         });
+
+        // અલ્ટ્રા સેફ વ્હોટ્સએપ ઓપનર ફંક્શન
+        function openWhatsApp(itemName) {
+            const number = "916351459342";
+            const message = encodeURIComponent("Hi! I am interested in ordering: " + itemName);
+            
+            // ટ્રાય ૧: ડાયરેક્ટ યુનિવર્સલ પ્રોટોકોલ (એપ ખોલવા માટે)
+            window.location.href = "whatsapp://send?phone=" + number + "&text=" + message;
+            
+            // ટ્રાય ૨: જો ઉપરની લિંક ફોનમાં સપોર્ટ ન કરે, તો 0.5 સેકન્ડ પછી વેબ લિંક ખૂલશે
+            setTimeout(() => {
+                window.open("https://whatsapp.com" + number + "&text=" + message, "_blank");
+            }, 500);
+        }
     </script>
 </body>
 </html>
-
